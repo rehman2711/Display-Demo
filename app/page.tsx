@@ -134,7 +134,7 @@ export default function Home() {
   return (
     <div className="">
       {/* ACCORDION */}
-      <div>
+      <div className="flex justify-center items-center flex-col w-1/2 mx-auto my-10 h-screen">
         <Accordion.Main>
           <Accordion.Trigger className="">
             What is Your Name ?
@@ -145,7 +145,7 @@ export default function Home() {
               {" "}
               My Name is Disha , My Friends Are Rehman , Palak , Poonam & Reshma
               . I Live in Pune , India . . . I have done my graduation from COEP
-              college
+              college of Engineering Which is also in Pune .
             </p>
           </Accordion.Content>
         </Accordion.Main>
@@ -167,8 +167,8 @@ export default function Home() {
         </Accordion.Main>
       </div>
 
-      {/* AVATAR  */}
-      <div className="">
+      {/* ALERT  */}
+      <div className="flex justify-center items-center h-screen">
         <AlertDialog.Main>
           <AlertDialog.Trigger>Open Alert</AlertDialog.Trigger>
           <AlertDialog.Content>
@@ -189,7 +189,7 @@ export default function Home() {
 
       {/* AVATAR */}
 
-      <div className="flex justify-center items-center gap-4">
+      <div className="flex justify-center items-center gap-4 h-screen">
         <Avatar.Root>
           <Avatar.Image
             src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -216,7 +216,7 @@ export default function Home() {
 
       <br />
 
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center h-screen">
         <div className="flex -space-x-4">
           {" "}
           {/* -space-x-* adds negative horizontal gap */}
@@ -252,83 +252,85 @@ export default function Home() {
       </div>
 
       {/* BADGE */}
-      <div className="flex flex-col gap-5">
-        <div className="flex gap-4">
-          <Badge variant="primary" radius="sm">
-            <b>Hellow</b>
-          </Badge>
-          <Badge variant="primary" radius="sm">
-            Hellow
-          </Badge>
-          <Badge variant="primary" radius="md">
-            Hellow
-          </Badge>
-          <Badge variant="primary" radius="lg">
-            Hellow
-          </Badge>
-          <Badge variant="primary" radius="pill">
-            Hellow
-          </Badge>
-        </div>
+      <div className="flex justify-center items-center h-screen">
+        <div className="flex flex-col gap-5">
+          <div className="flex gap-4">
+            <Badge variant="primary" radius="sm">
+              <b>Hellow</b>
+            </Badge>
+            <Badge variant="primary" radius="sm">
+              Hellow
+            </Badge>
+            <Badge variant="primary" radius="md">
+              Hellow
+            </Badge>
+            <Badge variant="primary" radius="lg">
+              Hellow
+            </Badge>
+            <Badge variant="primary" radius="pill">
+              Hellow
+            </Badge>
+          </div>
 
-        <div className="flex gap-4">
-          <Badge variant="warning" radius="sm">
-            <b>Hellow</b>
-          </Badge>
-          <Badge variant="warning" radius="sm">
-            Hellow
-          </Badge>
-          <Badge variant="warning" radius="md">
-            Hellow
-          </Badge>
-          <Badge variant="warning" radius="lg">
-            Hellow
-          </Badge>
-          <Badge variant="warning" radius="pill">
-            Hellow
-          </Badge>
-        </div>
+          <div className="flex gap-4">
+            <Badge variant="warning" radius="sm">
+              <b>Hellow</b>
+            </Badge>
+            <Badge variant="warning" radius="sm">
+              Hellow
+            </Badge>
+            <Badge variant="warning" radius="md">
+              Hellow
+            </Badge>
+            <Badge variant="warning" radius="lg">
+              Hellow
+            </Badge>
+            <Badge variant="warning" radius="pill">
+              Hellow
+            </Badge>
+          </div>
 
-        <div className="flex gap-4">
-          <Badge variant="success" radius="sm">
-            <b>Hellow</b>
-          </Badge>
-          <Badge variant="success" radius="sm">
-            Hellow
-          </Badge>
-          <Badge variant="success" radius="md">
-            Hellow
-          </Badge>
-          <Badge variant="success" radius="lg">
-            Hellow
-          </Badge>
-          <Badge variant="success" radius="pill">
-            Hellow
-          </Badge>
-        </div>
+          <div className="flex gap-4">
+            <Badge variant="success" radius="sm">
+              <b>Hellow</b>
+            </Badge>
+            <Badge variant="success" radius="sm">
+              Hellow
+            </Badge>
+            <Badge variant="success" radius="md">
+              Hellow
+            </Badge>
+            <Badge variant="success" radius="lg">
+              Hellow
+            </Badge>
+            <Badge variant="success" radius="pill">
+              Hellow
+            </Badge>
+          </div>
 
-        <div className="flex gap-4">
-          <Badge variant="danger" radius="sm">
-            <b>Hellow</b>
-          </Badge>
-          <Badge variant="danger" radius="sm">
-            Hellow
-          </Badge>
-          <Badge variant="danger" radius="md">
-            Hellow
-          </Badge>
-          <Badge variant="danger" radius="lg">
-            Hellow
-          </Badge>
-          <Badge variant="danger" radius="pill">
-            Hellow
-          </Badge>
+          <div className="flex gap-4">
+            <Badge variant="danger" radius="sm">
+              <b>Hellow</b>
+            </Badge>
+            <Badge variant="danger" radius="sm">
+              Hellow
+            </Badge>
+            <Badge variant="danger" radius="md">
+              Hellow
+            </Badge>
+            <Badge variant="danger" radius="lg">
+              Hellow
+            </Badge>
+            <Badge variant="danger" radius="pill">
+              Hellow
+            </Badge>
+          </div>
         </div>
       </div>
 
       {/* BREADCRUMB */}
 
-      <div>
+      <div className="flex justify-center items-center h-screen">
         <div className="flex flex-col gap-8">
           {/* WITHOUT ICONS */}
           <div>
@@ -448,29 +450,50 @@ export default function Home() {
       </div>
 
       {/* BUTTON */}
-      <div>
-        <Button
-          variant="outline"
-          size="sm"
-          className="text-green-500 border-green-500"
-        >
-          Rehman
-        </Button>
+      <div className="h-screen">
+        <div className="flex justify-center items-center gap-4 my-10">
+          <Button variant="solid" size="sm">
+            Rehman
+          </Button>
+
+          <Button variant="outline" size="sm">
+            Disha
+          </Button>
+
+          <Button variant="ghost" size="sm">
+            Palak
+          </Button>
+
+          <Button variant="link" size="sm">
+            Poonam
+          </Button>
+        </div>
+
+        {/* BUTTONRING */}
+        <div className="flex justify-center items-center gap-4 my-10">
+          <ButtonRing variant="primary" size="sm">
+            Rehman
+          </ButtonRing>
+          <ButtonRing variant="solid" size="sm">
+            Disha
+          </ButtonRing>
+          <ButtonRing variant="success" size="sm">
+            Palak
+          </ButtonRing>
+          <ButtonRing variant="danger" size="sm">
+            Poonam
+          </ButtonRing>
+        </div>
       </div>
 
-      {/* BUTTONRING */}
-      <div>
-        <ButtonRing size="sm">Rehman</ButtonRing>
-      </div>
-
-      <div>
-        <Calendar />
+      <div className="flex justify-center items-center mx-auto h-screen">
+        <Calendar className="w-[20%]" />
       </div>
 
       {/* CARD */}
-      <div className="flex justify-center items-center">
-        <div className="h-[50%]">
-          <Card.Main className="bg-white w-[95%]" shadow="md">
+      <div className="flex justify-center items-center h-screen">
+        <div className="">
+          <Card.Main className="bg-white w-[80%]" shadow="md">
             <Card.Area className="">
               <Card.Image
                 className="scale-100"
@@ -489,7 +512,65 @@ export default function Home() {
                 </p>
 
                 <div className="flex justify-center">
-                  <ButtonRing variant="success" className="my-2">
+                  <ButtonRing size="sm" variant="success" className="my-2">
+                    Hire Me
+                  </ButtonRing>
+                </div>
+              </div>
+            </Card.Area>
+          </Card.Main>
+        </div>
+
+        <div className="">
+          <Card.Main className="bg-white w-[80%]" shadow="md">
+            <Card.Area className="">
+              <Card.Image
+                className="scale-100"
+                radius="none"
+                fit="cover"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              ></Card.Image>
+            </Card.Area>
+            <Card.Area className="p-4">
+              <div className="space-y-4">
+                <h2 className="text-xl font-bold">Card Section</h2>
+                <p className="text-md">
+                  A card component is a reusable UI element used to group
+                  related content and actions together inside a contained,
+                  visually distinct block .{" "}
+                </p>
+
+                <div className="flex justify-center">
+                  <ButtonRing size="md" variant="success" className="my-2">
+                    Hire Me
+                  </ButtonRing>
+                </div>
+              </div>
+            </Card.Area>
+          </Card.Main>
+        </div>
+
+        <div className="">
+          <Card.Main className="bg-white w-[80%]" shadow="md">
+            <Card.Area className="">
+              <Card.Image
+                className="scale-100"
+                radius="none"
+                fit="cover"
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              ></Card.Image>
+            </Card.Area>
+            <Card.Area className="p-4">
+              <div className="space-y-4">
+                <h2 className="text-xl font-bold">Card Section</h2>
+                <p className="text-md">
+                  A card component is a reusable UI element used to group
+                  related content and actions together inside a contained,
+                  visually distinct block .{" "}
+                </p>
+
+                <div className="flex justify-center">
+                  <ButtonRing size="lg" variant="success" className="my-2">
                     Hire Me
                   </ButtonRing>
                 </div>
@@ -500,7 +581,7 @@ export default function Home() {
       </div>
 
       {/* CAROUSEL */}
-      <div>
+      <div className="flex justify-center items-center my-10 h-screen">
         <Carousel size="lg" autoPlay intervalMs={4000} className="mx-auto mt-8">
           <CarouselItem className="bg-white h-64 flex items-center justify-center text-white text-2xl">
             <img
@@ -524,7 +605,7 @@ export default function Home() {
       </div>
 
       {/* CHECKBOX */}
-      <div>
+      <div className="h-screen flex justify-center items-center">
         <div className="flex flex-col justify-start gap-4">
           <div className="flex justify-start items-center gap-3">
             <CheckBox variant="dark" boxSize="md"></CheckBox>
@@ -551,28 +632,90 @@ export default function Home() {
       </div>
 
       {/* DRAWER */}
-      <div className=" flex justify-center">
-        <Drawer.Main side="bottom" className="">
-          <Drawer.Trigger className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
-            Open Drawer
-          </Drawer.Trigger>
-          {/* w-[50%] => if right or left for overlapping the main screen horizontally*/}
-          {/* h-[50%] => if top or bottom for overlapping the main screen vertically*/}
-          <Drawer.Content className="p-6 bg-white shadow-lg">
-            <h2 className="text-lg font-semibold mb-4">Drawer Title</h2>
-            <p className="text-sm text-gray-600 mb-6">
-              This is a simple drawer for testing. You can add any content you
-              want here.
-            </p>
-            <Drawer.Close className="px-3 py-2 bg-red-500 text-white rounded hover:bg-red-600">
-              Close
-            </Drawer.Close>
-          </Drawer.Content>
-        </Drawer.Main>
+      <div className="h-screen flex justify-center items-center gap-10">
+        <div className=" flex justify-center items-center">
+          <Drawer.Main side="bottom" className="">
+            <Drawer.Trigger className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+              Below Drawer
+            </Drawer.Trigger>
+            {/* w-[50%] => if right or left for overlapping the main screen horizontally*/}
+            {/* h-[50%] => if top or bottom for overlapping the main screen vertically*/}
+            <Drawer.Content className="p-6 bg-white shadow-lg">
+              <h2 className="text-lg font-semibold mb-4">Drawer Title</h2>
+              <p className="text-sm text-gray-600 mb-6">
+                This is a simple drawer for testing. You can add any content you
+                want here.
+              </p>
+              <Drawer.Close className="px-3 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+                Close
+              </Drawer.Close>
+            </Drawer.Content>
+          </Drawer.Main>
+        </div>
+
+        <div className=" flex justify-center items-center">
+          <Drawer.Main side="top" className="">
+            <Drawer.Trigger className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+              Top Drawer
+            </Drawer.Trigger>
+            {/* w-[50%] => if right or left for overlapping the main screen horizontally*/}
+            {/* h-[50%] => if top or bottom for overlapping the main screen vertically*/}
+            <Drawer.Content className="p-6 bg-white shadow-lg">
+              <h2 className="text-lg font-semibold mb-4">Drawer Title</h2>
+              <p className="text-sm text-gray-600 mb-6">
+                This is a simple drawer for testing. You can add any content you
+                want here.
+              </p>
+              <Drawer.Close className="px-3 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+                Close
+              </Drawer.Close>
+            </Drawer.Content>
+          </Drawer.Main>
+        </div>
+
+        <div className=" flex justify-center items-center">
+          <Drawer.Main side="left" className="">
+            <Drawer.Trigger className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+              Left Drawer
+            </Drawer.Trigger>
+            {/* w-[50%] => if right or left for overlapping the main screen horizontally*/}
+            {/* h-[50%] => if top or bottom for overlapping the main screen vertically*/}
+            <Drawer.Content className="p-6 bg-white shadow-lg">
+              <h2 className="text-lg font-semibold mb-4">Drawer Title</h2>
+              <p className="text-sm text-gray-600 mb-6">
+                This is a simple drawer for testing. You can add any content you
+                want here.
+              </p>
+              <Drawer.Close className="px-3 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+                Close
+              </Drawer.Close>
+            </Drawer.Content>
+          </Drawer.Main>
+        </div>
+
+        <div className=" flex justify-center items-center">
+          <Drawer.Main side="right" className="">
+            <Drawer.Trigger className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+              Right Drawer
+            </Drawer.Trigger>
+            {/* w-[50%] => if right or left for overlapping the main screen horizontally*/}
+            {/* h-[50%] => if top or bottom for overlapping the main screen vertically*/}
+            <Drawer.Content className="p-6 bg-white shadow-lg">
+              <h2 className="text-lg font-semibold mb-4">Drawer Title</h2>
+              <p className="text-sm text-gray-600 mb-6">
+                This is a simple drawer for testing. You can add any content you
+                want here.
+              </p>
+              <Drawer.Close className="px-3 py-2 bg-red-500 text-white rounded hover:bg-red-600">
+                Close
+              </Drawer.Close>
+            </Drawer.Content>
+          </Drawer.Main>
+        </div>
       </div>
 
       {/* DROPDOWN MENU */}
-      <div>
+      <div className="h-screen flex justify-center items-center">
         <DropdownMenu.Main>
           <DropdownMenu.Trigger>Profile</DropdownMenu.Trigger>
           <DropdownMenu.Content>
@@ -628,7 +771,7 @@ export default function Home() {
       </div>
 
       {/* INFINITE CAROUSEL */}
-      <div>
+      <div className="h-screen flex justify-center items-center">
         <InfiniteCarousel pauseOnHover={true} speed={60}>
           <InfiniteCarouselItem
             href="https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0"
@@ -660,57 +803,99 @@ export default function Home() {
               className="w-64 h-64 object-cover rounded-lg"
             />
           </InfiniteCarouselItem>
+          <InfiniteCarouselItem
+            href="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
+            className="mx-4 h-64"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0"
+              alt=""
+              className="w-64 h-64 object-cover rounded-lg"
+            />
+          </InfiniteCarouselItem>
+          <InfiniteCarouselItem
+            href="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
+            className="mx-4 h-64"
+          >
+            <img
+              src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
+              alt=""
+              className="w-64 h-64 object-cover rounded-lg"
+            />
+          </InfiniteCarouselItem>
+          <InfiniteCarouselItem
+            href="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
+            className="mx-4 h-64"
+          >
+            <img
+              src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0"
+              alt=""
+              className="w-64 h-64 object-cover rounded-lg"
+            />
+          </InfiniteCarouselItem>
         </InfiniteCarousel>
       </div>
 
       {/* INPUT */}
-      <div className="flex flex-col gap-4">
-        <Input border="primary" type="text" placeholder="Enter Any Text" />
-        <Input border="primary" type="email" placeholder="Enter Your Email" />
-        <Input
-          border="primary"
-          type="password"
-          placeholder="Enter Your Password"
-        />
-        <Input border="primary" type="number" placeholder="Enter Any Number" />
-      </div>
-
-      {/* INPUT OTP */}
-      <div className="space-y-4">
-        <OTPInput
-          length={4}
-          disabled={false}
-          value={otpValue}
-          onComplete={(val) => {
-            setOtpValue(val);
-          }}
-        />
-        <div className="text-sm text-gray-600">
-          Current Value: <span className="font-mono">{otpValue}</span>
+      <div className="h-screen flex justify-center items-center">
+        <div className="flex flex-col gap-4 justify-center items-center w-1/4">
+          <Label>Input Text</Label>
+          <Input border="primary" type="text" placeholder="Enter Any Text" />
+          <Label>Input Email</Label>
+          <Input border="primary" type="email" placeholder="Enter Your Email" />
+          <Label>Input Password</Label>
+          <Input
+            border="primary"
+            type="password"
+            placeholder="Enter Your Password"
+          />
+          <Label>Input Number</Label>
+          <Input
+            border="primary"
+            type="number"
+            placeholder="Enter Any Number"
+          />
         </div>
       </div>
 
-      <div className="space-y-4">
-        <OTPInput
-          length={6}
-          disabled={false}
-          value={otpValue1}
-          onComplete={(val) => {
-            setOtpValue1(val);
-          }}
-        />
-        <div className="text-sm text-gray-600">
-          Current Value: <span className="font-mono">{otpValue1}</span>
+      {/* INPUT OTP */}
+      <div className="h-screen flex flex-col justify-center items-center gap-20">
+        <div>
+          <OTPInput
+            length={4}
+            disabled={false}
+            value={otpValue}
+            onComplete={(val) => {
+              setOtpValue(val);
+            }}
+          />
+          <div className="text-sm text-gray-600">
+            Current Value: <span className="font-mono">{otpValue}</span>
+          </div>
+        </div>
+
+        <div className="">
+          <OTPInput
+            length={6}
+            disabled={false}
+            value={otpValue1}
+            onComplete={(val) => {
+              setOtpValue1(val);
+            }}
+          />
+          <div className="text-sm text-gray-600">
+            Current Value: <span className="font-mono">{otpValue1}</span>
+          </div>
         </div>
       </div>
 
       {/* Label */}
-      <div>
+      <div className="h-screen flex justify-center items-center">
         <Label>Hello , This is label</Label>
       </div>
 
       {/* NAVIGATION MENU */}
-      <div>
+      <div className="h-screen flex justify-center items-center">
         <NavigationMenuBar>
           <NavigationMenuLogo
             src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -850,8 +1035,8 @@ export default function Home() {
       </div>
 
       {/* RADIO GROUP */}
-      <div>
-        <RadioGroup>
+      <div className="">
+        <RadioGroup className="h-screen flex flex-col justify-center items-center gap-8">
           {/* Default */}
           <div className="flex items-center gap-2">
             <RadioItem value="default" />
@@ -879,35 +1064,48 @@ export default function Home() {
       </div>
 
       {/* SEPARATOR */}
-      <div className="mb-8">
+      <div className="h-screen flex justify-center items-center flex-col mb-8">
         <p>Small spacing separator</p>
-        <Separator variant="default" size="lg" className="bg-yellow-500 w-[40%]" />
+        <Separator
+          variant="default"
+          size="lg"
+          className="bg-yellow-500 w-[40%]"
+        />
 
         <br />
 
         <p>Medium spacing separator</p>
-        <Separator variant="default" size="lg" className="bg-orange-500 w-[40%]" />
+        <Separator
+          variant="default"
+          size="lg"
+          className="bg-orange-500 w-[40%]"
+        />
 
         <br />
 
         <p>Large spacing separator</p>
-        <Separator variant="default" size="lg" className="bg-purple-500 w-[40%]" />
+        <Separator
+          variant="default"
+          size="lg"
+          className="bg-purple-500 w-[40%]"
+        />
       </div>
 
-      <div className=" mb-8 flex gap-4 justify-center items-center">
+      <div className=" mb-8 flex gap-4 justify-center items-center h-screen">
         <Separator size="lg" className="bg-yellow-500 w-[40%]" />
         <p>OR</p>
         <Separator size="lg" className="bg-yellow-500 w-[40%]" />
       </div>
 
-      <div className=" mb-8 flex flex-col gap-25 items-center">{" "}
-        <Separator size="lg" className="bg-yellow-400 rotate-90 w-[40%]" />
-        <p>OR</p>
-        {" "}<Separator size="lg" className="bg-yellow-400 rotate-90 w-[40%]" />
+      <div className=" mb-8 flex flex-col gap-25 items-center h-screen">
+        {" "}
+        <Separator size="lg" className="bg-yellow-400 rotate-90 w-[20%]" />
+        <p className="my-10">OR</p>{" "}
+        <Separator size="lg" className="bg-yellow-400 rotate-90 w-[20%]" />
       </div>
 
       {/* TABLE */}
-      <div>
+      <div className="h-screen flex justify-center items-center">
         <Table>
           <TableHead>
             <TableRow>
@@ -946,137 +1144,154 @@ export default function Home() {
       </div>
 
       {/* TOASTER */}
-      <div>
-        <Toaster.Main>
-          <Toaster.Trigger
-            message="Profile updated successfully!"
-            toastType="success"
-            position="top-right"
-          >
-            <Button
-              variant="solid"
-              size="sm"
-              className="bg-green-500 hover:bg-green-600"
+      <div className="h-screen flex flex-col justify-center items-center gap-10">
+        <div>
+          <Toaster.Main>
+            <Toaster.Trigger
+              message="Profile updated successfully!"
+              toastType="success"
+              position="top-right"
             >
-              Success
-            </Button>
-          </Toaster.Trigger>
-        </Toaster.Main>
-      </div>
+              <Button
+                variant="solid"
+                size="sm"
+                className="bg-green-500 hover:bg-green-600"
+              >
+                Success
+              </Button>
+            </Toaster.Trigger>
+          </Toaster.Main>
+        </div>
 
-      <div>
-        <Toaster.Main>
-          <Toaster.Trigger
-            message="Something went wrong!"
-            toastType="error"
-            position="top-left"
-          >
-            <Button
-              variant="solid"
-              size="sm"
-              className="bg-red-600 hover:bg-red-700"
-              radius="md"
+        <div>
+          <Toaster.Main>
+            <Toaster.Trigger
+              message="Something went wrong!"
+              toastType="error"
+              position="top-left"
             >
-              Show Error
-            </Button>
-          </Toaster.Trigger>
-        </Toaster.Main>
-      </div>
+              <Button
+                variant="solid"
+                size="sm"
+                className="bg-red-600 hover:bg-red-700"
+                radius="md"
+              >
+                Show Error
+              </Button>
+            </Toaster.Trigger>
+          </Toaster.Main>
+        </div>
 
-      <div>
-        <Toaster.Main>
-          <Toaster.Trigger
-            message="Information message displayed."
-            toastType="info"
-            position="bottom-right"
-          >
-            <Button
-              variant="solid"
-              size="sm"
-              className="bg-blue-500 hover:bg-blue-600"
+        <div>
+          <Toaster.Main>
+            <Toaster.Trigger
+              message="Information message displayed."
+              toastType="info"
+              position="bottom-right"
             >
-              Info
-            </Button>
-          </Toaster.Trigger>
-        </Toaster.Main>
-      </div>
+              <Button
+                variant="solid"
+                size="sm"
+                className="bg-blue-500 hover:bg-blue-600"
+              >
+                Info
+              </Button>
+            </Toaster.Trigger>
+          </Toaster.Main>
+        </div>
 
-      <div>
-        <Toaster.Main>
-          <Toaster.Trigger
-            message="Please review your input again!"
-            toastType="warning"
-            position="bottom-left"
-          >
-            <Button
-              variant="solid"
-              size="sm"
-              className="bg-yellow-500 hover:bg-yellow-600"
+        <div>
+          <Toaster.Main>
+            <Toaster.Trigger
+              message="Please review your input again!"
+              toastType="warning"
+              position="bottom-left"
             >
-              Warning
-            </Button>
-          </Toaster.Trigger>
-        </Toaster.Main>
-      </div>
+              <Button
+                variant="solid"
+                size="sm"
+                className="bg-yellow-500 hover:bg-yellow-600"
+              >
+                Warning
+              </Button>
+            </Toaster.Trigger>
+          </Toaster.Main>
+        </div>
 
-
-      <div>
-        <Toaster.Main>
-      <Toaster.Trigger
-        message="Custom duration example (6 seconds)"
-        toastType="info"
-        position="top-right"
-        duration={6000}
-      >
-        <Button variant="outline" size="sm">6s Duration</Button>
-      </Toaster.Trigger>
-    </Toaster.Main>
+        <div>
+          <Toaster.Main>
+            <Toaster.Trigger
+              message="Custom duration example (6 seconds)"
+              toastType="info"
+              position="top-right"
+              duration={6000}
+            >
+              <Button variant="outline" size="sm">
+                6s Duration
+              </Button>
+            </Toaster.Trigger>
+          </Toaster.Main>
+        </div>
       </div>
 
       {/* TOOLTIP */}
-      <div className="flex justify-center items-center h-64">
-      <Tooltip.Root>
-        <Tooltip.Trigger>
-          <Button>Hover me</Button>
-        </Tooltip.Trigger>
-        <Tooltip.Content content="I am a tooltip!" position="top" />
-      </Tooltip.Root>
-    </div>
+      <div className="flex justify-center items-center h-screen gap-70">
+        <div className="flex flex-col gap-20">
+          <div>
+            <Tooltip.Root>
+              <Tooltip.Trigger>
+                <Button>Hover me</Button>
+              </Tooltip.Trigger>
+              <Tooltip.Content content="I am a tooltip!" position="top" />
+            </Tooltip.Root>
+          </div>
 
-    <div>
-      <Tooltip.Root>
-        <Tooltip.Trigger>
-          <Button>Hover me</Button>
-        </Tooltip.Trigger>
-        <Tooltip.Content content="Tooltip at the bottom" position="bottom" />
-      </Tooltip.Root>
-    </div>
+          <div>
+            <Tooltip.Root>
+              <Tooltip.Trigger>
+                <Button>Hover me</Button>
+              </Tooltip.Trigger>
+              <Tooltip.Content
+                content="Tooltip at the bottom"
+                position="bottom"
+              />
+            </Tooltip.Root>
+          </div>
+        </div>
 
-    <div className="flex justify-center items-center h-64">
-      <Tooltip.Root>
-        <Tooltip.Trigger>
-          <Button>Hover me</Button>
-        </Tooltip.Trigger>
-        <Tooltip.Content content="Tooltip on the left" position="left" />
-      </Tooltip.Root>
-    </div>
+        <div className="flex flex-col gap-20">
+          <div className="flex justify-center items-center">
+            <Tooltip.Root>
+              <Tooltip.Trigger>
+                <Button>Hover me</Button>
+              </Tooltip.Trigger>
+              <Tooltip.Content content="Tooltip on the left" position="left" />
+            </Tooltip.Root>
+          </div>
 
-    <div className="flex justify-center items-center h-64">
-      <Tooltip.Root>
-        <Tooltip.Trigger>
-          <Button>Hover me</Button>
-        </Tooltip.Trigger>
-        <Tooltip.Content content="Tooltip on the right" position="right" />
-      </Tooltip.Root>
-    </div>
+          <div className="flex justify-center items-center">
+            <Tooltip.Root>
+              <Tooltip.Trigger>
+                <Button>Hover me</Button>
+              </Tooltip.Trigger>
+              <Tooltip.Content
+                content="Tooltip on the right"
+                position="right"
+              />
+            </Tooltip.Root>
+          </div>
+        </div>
 
-    <div className="flex justify-center items-center h-64">
-        <Tooltip.Root>
-          <Tooltip.Trigger>
-            <Button>Hover me</Button>
-          </Tooltip.Trigger>
-          <Tooltip.Content content="I am a tooltip!" position="simple" />
-        </Tooltip.Root>
+        <div>
+          <div className="flex justify-center items-center">
+            <Tooltip.Root>
+              <Tooltip.Trigger>
+                <Button>Hover me</Button>
+              </Tooltip.Trigger>
+              <Tooltip.Content content="I am a tooltip!" position="simple" />
+            </Tooltip.Root>
+          </div>
+        </div>
       </div>
     </div>
   );

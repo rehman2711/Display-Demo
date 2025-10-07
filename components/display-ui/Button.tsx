@@ -11,7 +11,7 @@ const buttonVariants = cva(["bg-blue-500 p-2 rounded-md text-white"], {
       outline:
         "bg-transparent border border-blue-500 text-blue-500 hover:text-blue-700 hover:border-blue-700",
       ghost: "bg-transparent text-blue-500 hover:bg-blue-500 hover:text-white",
-      link: "bg-transparent text-blue-500 hover:bg-blue-500 hover:text-white",
+      link: "bg-transparent text-blue-500 hover:text-blue-700 hover:underline",
     },
     size: {
       sm: "px-4 py-2 text-sm",
