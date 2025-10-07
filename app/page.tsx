@@ -132,7 +132,19 @@ export default function Home() {
   ];
 
   return (
-    <div className="">
+    <>
+    <div className="w-full relative overflow-hidden">
+  {/* Green Corner Soft Background */}
+  <div
+    className=" fixed inset-0 z-0"
+    style={{
+      backgroundImage: `
+        radial-gradient(circle 600px at 0% 200px, #bbf7d0, transparent),
+        radial-gradient(circle 600px at 100% 200px, #bbf7d0, transparent)
+      `,
+    }}
+  />
+  <div className="relative z-10">
       {/* ACCORDION */}
       <div className="flex justify-center items-center flex-col w-1/2 mx-auto my-10 h-screen">
         <Accordion.Main>
@@ -941,19 +953,22 @@ export default function Home() {
 
       {/* NAVIGATION MENU MAC */}
       <div>
-        <NavigateMenu>
+        <NavigateMenu >
           <NavigateItem
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
             alt="Next"
+            className="bg-purple-400/80 p-1 rounded-md"
             onClick={() => {
               alert("Next");
             }}
             tooltipContent="Next"
+          
           />
 
           <NavigateItem
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
             alt="React"
+             className="bg-pink-400/80 p-1 rounded-md"
             onClick={() => {
               alert("React");
             }}
@@ -963,6 +978,7 @@ export default function Home() {
           <NavigateItem
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg"
             alt="Nest"
+             className="bg-black/80 p-1 rounded-md"
             onClick={() => {
               alert("Nest");
             }}
@@ -972,6 +988,7 @@ export default function Home() {
           <NavigateItem
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nuxt/nuxt-original.svg"
             alt="Nuxt"
+             className="bg-red-400/80 p-1 rounded-md"
             onClick={() => {
               alert("Nuxt");
             }}
@@ -981,6 +998,7 @@ export default function Home() {
           <NavigateItem
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kaggle/kaggle-original.svg"
             alt="Kaggle"
+             className="bg-orange-400/80 p-1 rounded-md"
             onClick={() => {
               alert("Kaggle");
             }}
@@ -990,6 +1008,7 @@ export default function Home() {
           <NavigateItem
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nuxtjs/nuxtjs-original.svg"
             alt="Nuxt"
+             className="bg-cyan-400/80 p-1 rounded-md"
             onClick={() => {
               alert("Nuxt");
             }}
@@ -999,6 +1018,7 @@ export default function Home() {
           <NavigateItem
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/axios/axios-plain.svg"
             alt="Axios"
+            className="bg-red-400/80 p-1 rounded-md"
             onClick={() => {
               alert("Axios");
             }}
@@ -1008,6 +1028,7 @@ export default function Home() {
           <NavigateItem
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dyalog/dyalog-plain.svg"
             alt="Dyalog"
+              className="bg-black/80 p-1 rounded-md"
             onClick={() => {
               alert("Dyalog");
             }}
@@ -1017,6 +1038,7 @@ export default function Home() {
           <NavigateItem
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg"
             alt="Django"
+              className="bg-yellow-400/80 p-1 rounded-md"
             onClick={() => {
               alert("Django");
             }}
@@ -1026,6 +1048,7 @@ export default function Home() {
           <NavigateItem
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"
             alt="Fast-API"
+              className="bg-purple-700/80 p-1 rounded-md"
             onClick={() => {
               alert("Fast-API");
             }}
@@ -1294,5 +1317,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+</div>
+    </>
   );
 }

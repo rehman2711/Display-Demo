@@ -10,6 +10,7 @@ import {
 } from "framer-motion";
 
 import { Tooltip } from "./ToolTipForMenu";
+import { cn } from "@/lib/index";
 
 /* ---------- Container ---------- */
 export function NavigateMenu({ children }: { children: React.ReactNode }) {
@@ -46,6 +47,7 @@ type NavigateItemProps = {
   mouseX?: MotionValue;
   onClick?: () => void;
   tooltipContent?: string;
+  className?: string;
 };
 
 export function NavigateItem({
@@ -56,6 +58,7 @@ export function NavigateItem({
   mouseX,
   onClick,
   tooltipContent,
+  className
 }: NavigateItemProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -87,10 +90,7 @@ export function NavigateItem({
     <motion.div
       ref={ref}
       style={{ width }}
-      className="
-        flex aspect-square items-center justify-center
-        rounded-xl bg-white/90 cursor-pointer shadow-md
-      "
+      className={cn("flex aspect-square items-center justify-center rounded-xl bg-white/90 cursor-pointer shadow-md " , className)}
       onClick={handleClick}
     >
       <Tooltip.Root>
@@ -100,7 +100,7 @@ export function NavigateItem({
             alt={alt}
             width={size}
             height={size}
-            className="object-contain select-none pointer-events-none"
+            className={cn("object-contain select-none pointer-events-none" , className)}
             draggable={false}
           />
           {tooltipContent && (
