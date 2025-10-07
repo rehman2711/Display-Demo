@@ -1,4 +1,5 @@
 "use client";
+
 import {
   ComponentProps,
   ReactNode,
@@ -8,7 +9,7 @@ import {
   useState,
   useEffect,
 } from "react";
-import { cva} from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { cn } from "@/lib/index";
 
 // ---------------- Styles ----------------
@@ -54,11 +55,11 @@ const DialogMain = forwardRef<HTMLDivElement, DialogMainProps>(
   ({ children, defaultOpen = false }, ref) => {
     const [open, setOpen] = useState(defaultOpen);
 
-    // close on ESC
+    // Close on ESC
     useEffect(() => {
-      function onKey(e: KeyboardEvent) {
+      const onKey = (e: KeyboardEvent) => {
         if (e.key === "Escape") setOpen(false);
-      }
+      };
       window.addEventListener("keydown", onKey);
       return () => window.removeEventListener("keydown", onKey);
     }, []);
@@ -101,6 +102,7 @@ type DialogContentProps = ComponentProps<"div"> & { children?: ReactNode };
 const DialogContent = forwardRef<HTMLDivElement, DialogContentProps>(
   ({ children, className, ...props }, ref) => {
     const { open, setOpen } = useDialog();
+
     return (
       <div
         className={cn(dialogOverlay({ open }), "flex")}
@@ -178,16 +180,19 @@ const DialogCancel = ({
 const DialogConfirm = ({
   children,
   className,
+  onClick,
   ...props
 }: ComponentProps<"button">) => {
   const { setOpen } = useDialog();
+
+  const handleConfirm = (e: React.MouseEvent<HTMLButtonElement>) => {
+    onClick?.(e); // ✅ use actual React synthetic event
+    setOpen(false);
+  };
+
   return (
     <button
-      onClick={() => {
-        setOpen(false);
-        props.onClick?.(new MouseEvent("click") as any);
-        
-      }}
+      onClick={handleConfirm}
       className={cn(
         "px-4 py-2 rounded-md bg-red-600 text-white hover:bg-red-700 transition text-sm",
         className

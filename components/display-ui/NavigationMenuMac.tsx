@@ -10,7 +10,6 @@ import {
 } from "framer-motion";
 
 import { Tooltip } from "./ToolTipForMenu";
-import Image from "next/image";
 
 /* ---------- Container ---------- */
 export function NavigateMenu({ children }: { children: React.ReactNode }) {
@@ -96,7 +95,7 @@ export function NavigateItem({
     >
       <Tooltip.Root>
         <Tooltip.Trigger>
-          <Image
+          <img
             src={src}
             alt={alt}
             width={size}

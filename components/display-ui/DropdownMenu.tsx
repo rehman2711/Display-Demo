@@ -9,6 +9,7 @@ import {
   forwardRef,
   ReactNode,
   ComponentProps,
+  Ref,
 } from "react";
 import { cn } from "@/lib/index";
 
@@ -39,26 +40,32 @@ const DropdownMain = forwardRef<HTMLDivElement, DropdownMainProps>(
 
     // Close when clicking outside
     useEffect(() => {
-      function handleClick(e: MouseEvent) {
+      const handleClick = (e: MouseEvent) => {
         if (
           containerRef.current &&
           !containerRef.current.contains(e.target as Node)
         ) {
           setOpen(false);
         }
-      }
+      };
       document.addEventListener("mousedown", handleClick);
       return () => document.removeEventListener("mousedown", handleClick);
     }, []);
 
+    // Properly forward ref without using `any`
+    const setRefs = (node: HTMLDivElement | null) => {
+      containerRef.current = node;
+      if (typeof ref === "function") {
+        ref(node);
+      } else if (ref) {
+        (ref as React.MutableRefObject<HTMLDivElement | null>).current = node;
+      }
+    };
+
     return (
       <DropdownCtx.Provider value={{ open, setOpen }}>
         <div
-          ref={(node) => {
-            containerRef.current = node!;
-            if (typeof ref === "function") ref(node!);
-            else if (ref) (ref as any).current = node;
-          }}
+          ref={setRefs}
           className={cn("relative inline-block", className)}
           {...props}
         >
@@ -99,7 +106,9 @@ type DropdownContentProps = ComponentProps<"div"> & { children?: ReactNode };
 const DropdownContent = forwardRef<HTMLDivElement, DropdownContentProps>(
   ({ children, className, ...props }, ref) => {
     const { open } = useDropdown();
-    return open ? (
+    if (!open) return null;
+
+    return (
       <div
         ref={ref}
         className={cn(
@@ -110,7 +119,7 @@ const DropdownContent = forwardRef<HTMLDivElement, DropdownContentProps>(
       >
         {children}
       </div>
-    ) : null;
+    );
   }
 );
 DropdownContent.displayName = "DropdownMenu.Content";
@@ -122,22 +131,24 @@ type DropdownItemProps = ComponentProps<"button"> & {
 };
 
 const DropdownItem = forwardRef<HTMLButtonElement, DropdownItemProps>(
-  ({ children, className, icon, ...props }, ref) => {
+  ({ children, className, icon, onClick, ...props }, ref) => {
     const { setOpen } = useDropdown();
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+      onClick?.(e);
+      setOpen(false);
+    };
+
     return (
       <button
         ref={ref}
-        onClick={(e) => {
-          props.onClick?.(e);
-          setOpen(false);
-        }}
+        onClick={handleClick}
         className={cn(
           "w-full text-left px-4 py-2 text-sm rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition",
           className
         )}
         {...props}
       >
-        {icon && <span className="inline-flex">{icon}</span>}
+        {icon && <span className="inline-flex mr-2">{icon}</span>}
         {children}
       </button>
     );

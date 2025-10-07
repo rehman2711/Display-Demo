@@ -78,6 +78,8 @@ const TooltipContent = forwardRef<HTMLDivElement, TooltipContentProps>(
   }
 );
 
+TooltipContent.displayName="TooltipContent"
+
 // ---------- Export ----------
 export const Tooltip = {
   Root: TooltipRoot,

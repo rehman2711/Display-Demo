@@ -10,9 +10,11 @@ import {
   useEffect,
   Children,
   cloneElement,
+  ReactElement,
 } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+// ---------------- Variants ----------------
 const carouselVariants = cva("relative w-full overflow-hidden", {
   variants: {
     size: {
@@ -26,6 +28,7 @@ const carouselVariants = cva("relative w-full overflow-hidden", {
   },
 });
 
+// ---------------- Types ----------------
 type CarouselProps = ComponentProps<"div"> &
   VariantProps<typeof carouselVariants> & {
     children: ReactNode;
@@ -33,6 +36,7 @@ type CarouselProps = ComponentProps<"div"> &
     intervalMs?: number;
   };
 
+// ---------------- Main Component ----------------
 export const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
   (
     {
@@ -45,35 +49,35 @@ export const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
     },
     ref
   ) => {
-    const items = Children.toArray(children);
+    const items = Children.toArray(children).filter(
+      (child): child is ReactElement => !!child && typeof child === "object"
+    );
     const count = items.length;
 
-    // 🔹 Start at 1 (first real slide, because of clones)
+    // Start at 1 (first real slide, because of clones)
     const [index, setIndex] = useState(1);
     const [transitioning, setTransitioning] = useState(true);
 
     const next = () => setIndex((i) => i + 1);
     const prev = () => setIndex((i) => i - 1);
 
-    // 🔹 Auto play
+    // Auto play
     useEffect(() => {
       if (!autoPlay) return;
       const t = setInterval(next, intervalMs);
       return () => clearInterval(t);
     }, [autoPlay, intervalMs]);
 
-    // 🔹 Handle instant jump when hitting clones
+    // Handle instant jump when hitting clones
     useEffect(() => {
       if (index === count + 1) {
-        // after last clone → jump to first real
         const t = setTimeout(() => {
           setTransitioning(false);
           setIndex(1);
-        }, 500); // match duration
+        }, 500);
         return () => clearTimeout(t);
       }
       if (index === 0) {
-        // before first clone → jump to last real
         const t = setTimeout(() => {
           setTransitioning(false);
           setIndex(count);
@@ -83,11 +87,11 @@ export const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
       setTransitioning(true);
     }, [index, count]);
 
-    // 🔹 Prepare slides [lastClone, ...items, firstClone]
-    const slides = [
-      cloneElement(items[count - 1] as any, { key: "last-clone" }),
+    // Prepare slides [lastClone, ...items, firstClone]
+    const slides: ReactElement[] = [
+      cloneElement(items[count - 1], { key: "last-clone" }),
       ...items,
-      cloneElement(items[0] as any, { key: "first-clone" }),
+      cloneElement(items[0], { key: "first-clone" }),
     ];
 
     return (
@@ -100,12 +104,14 @@ export const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
         <button
           onClick={prev}
           className="absolute z-10 left-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 shadow"
+          aria-label="Previous"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={next}
           className="absolute z-10 right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-1 shadow"
+          aria-label="Next"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
@@ -126,8 +132,9 @@ export const Carousel = forwardRef<HTMLDivElement, CarouselProps>(
 );
 Carousel.displayName = "Carousel";
 
-/* 🔹 Item Wrappers remain same */
+// ---------------- Item ----------------
 type CarouselItemProps = ComponentProps<"div"> & { children: ReactNode };
+
 export const CarouselItem = forwardRef<HTMLDivElement, CarouselItemProps>(
   ({ className, children, ...props }, ref) => (
     <div ref={ref} className={cn("w-full flex-shrink-0", className)} {...props}>
